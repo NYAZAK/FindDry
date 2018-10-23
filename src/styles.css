@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+body {
+  background: #ffd89b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FFC66D, #53A0FD); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FFC66D, #53A0FD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
