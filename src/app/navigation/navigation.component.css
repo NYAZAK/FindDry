@@ -1,8 +1,6 @@
 ul {
   list-style-position: inside;
   list-style-type: none;
-
-
 }
 
 li {
@@ -20,9 +18,32 @@ a {
 ul li a:hover{
   color:black !important;
   transition-duration: 0.4s;
-
 }
 
 i{
   cursor: pointer;
+  margin-left: 40px;
+}
+
+i:hover{
+  color:#000000;
+  transition-duration: 0.4s;
+}
+.infobulle {
+  position: relative;
+  cursor: help;
+}
+.infobulle:hover::after,
+.infobulle:focus::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: -2.4em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  white-space: nowrap;
+  background-color: #ffffff;
+  padding:0 10px;
+  border-radius:25px;
+
 }
