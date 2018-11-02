@@ -5,24 +5,28 @@
 </div>
 
   <div class="row">
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 pl-5">
   <h1 class="animated zoomIn mt-5 text-light">
     {{ title }}!
   </h1>
   <img src="{{imgLocalisation}}" 
   class="animated zoomIn localisation img-fluid
-  col-xs-12 col-sm-12 col-md-6 col-lg-6" 
+  col-12" 
   alt="">
 </div>
-  <button 
-  class="btnDry raise hvr-grow">
-  {{telecharger}}
-</button>
-  <div class="download text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
-   
+  <div class="download text-center position-relative col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="col-12">
   <img src="{{imgMobile}}" 
   class="animated infinite bounce mt-5 delay-2s img-fluid mobile" 
   alt="telephone avec FindUdry">
+  <button 
+  class="btnDry telechargee raise hvr-grow position-absolute">
+  {{telecharger}}
+  </button>
+  <button class="btnDry position-absolute">
+    telecharger notre app !
+  </button>
+</div>
 </div>
 </div>
 </div>

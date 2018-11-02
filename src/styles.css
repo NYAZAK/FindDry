@@ -18,12 +18,13 @@ body {
   background-color: #53A0FD;
   border-radius: 25px;
   border:none;
-  min-height:50px;
-  -webkit-box-shadow: 15px 4px 130px 30px rgba(255,255,255,1);
-  -moz-box-shadow: 15px 4px 130px 30px rgba(255,255,255,1);
-  box-shadow: 15px 4px 130px 30px rgba(255,255,255,1);
+  height:50px !important;
+  -webkit-box-shadow: 15px 4px 130px 0px rgba(255,255,255,1);
+  -moz-box-shadow: 15px 4px 130px 0px rgba(255,255,255,1);
+  box-shadow: 15px 4px 130px 0px rgba(255,255,255,1);
   color:#ffffff;
   cursor: pointer;
+  width: 200px !important;
 }
 
 i{

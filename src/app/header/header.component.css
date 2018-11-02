@@ -1,9 +1,14 @@
-
-button{
+button {
   transition-duration: 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+}
+.telechargee{
+  transform: translate(-50%, 120%);
 }
 
-button:hover{
-  color:#53A0FD;
+button:hover {
+  color: #53A0FD;
   background-color: #FFC66D;
 }
