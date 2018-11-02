@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-
+  disappear: boolean = true;
   constructor() { }
 
+  isDisappear() {
+    this.disappear = !this.disappear;
+  }
 }

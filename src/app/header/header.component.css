@@ -1,34 +1,9 @@
-h1{
-  left:20%;
-  top:20%;
-  font-size:52px;
-  width: 500px !important;
-}
-
-
-
-img.mobile{
-  margin-top: 10%;
-  margin-left:50%;
-}
-
-img.localisation{
-  width: 700px;
-  height: 300px;
-  bottom:5%;
-  left:10%;
-}
-
 
 button{
-  position: absolute;
-  top: 20%;
-  right: 20%;
   transition-duration: 0.3s;
 }
 
 button:hover{
   color:#53A0FD;
   background-color: #FFC66D;
-
 }
