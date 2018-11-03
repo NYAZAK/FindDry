@@ -1,23 +1,32 @@
-<app-navigation></app-navigation>
-<div class="text-center container-fluid">
+<div class="container-fluid">
+<div class="row">
+<app-navigation class="mx-auto col-12">
+</app-navigation>
+</div>
 
-  <h1 class="animated zoomIn mt-5 text-light">
+  <div class="row">
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-5 pl-5 text-center ">
+  <h1 class="animated zoomIn mt-5 text-light mb-5">
     {{ title }}!
   </h1>
-
   <img src="{{imgLocalisation}}" 
-  class="animated zoomIn localisation img-fluid" 
+  class="animated zoomIn localisation img-fluid
+  col-12" 
   alt="">
-  <div class="download">
-
-  <button 
-      class=" btnDry raise hvr-grow">
-      {{telecharger}}
-  </button>
-
+</div>
+  <div class="download text-center position-relative col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="col-12">
   <img src="{{imgMobile}}" 
-  class="animated infinite bounce delay-2s img-fluid mobile" 
+  class="animated infinite bounce mt-5 delay-2s img-fluid mobile" 
   alt="telephone avec FindUdry">
-
+  <button 
+  class="btnDry telechargee raise hvr-grow position-absolute">
+  {{telecharger}}
+  </button>
+  <button class="btnDry position-absolute">
+    telecharger notre app !
+  </button>
+</div>
+</div>
 </div>
 </div>
