@@ -16,3 +16,8 @@ button:hover {
   color: #53A0FD;
   background-color: #FFC66D;
 }
+
+app-navigation {
+  position: absolute;
+  height: 100%;
+}
