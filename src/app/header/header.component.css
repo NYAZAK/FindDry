@@ -3,6 +3,10 @@ button {
   left: 50%;
   transform: translateX(-50%);
   top: 50%;
+  width: 80%;
+}
+img{
+  width: 100%;
 }
 .telechargee{
   transform: translate(-50%, 120%);
