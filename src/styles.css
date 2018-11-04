@@ -55,4 +55,7 @@ html {
 .app-section{
   margin-top: 0 !important;
   padding-top: 100px;
+    width: 100% !important;
+    background-color:#53A0FD;
+
 }
