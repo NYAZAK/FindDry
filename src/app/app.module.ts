@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { HeaderComponent } from './header/header.component';
-import { HistoireComponent } from './histoire/histoire.component';
+import { HeaderComponent } from './onepage/header/header.component';
+import { HistoireComponent } from './onepage/histoire/histoire.component';
+import { LocaliserComponent } from './onepage/localiser/localiser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     HeaderComponent,
-    HistoireComponent
+    HistoireComponent,
+    LocaliserComponent
   ],
   imports: [
     BrowserModule
