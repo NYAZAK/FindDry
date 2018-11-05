@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+
 import { HeaderComponent } from './onepage/header/header.component';
 import { HistoireComponent } from './onepage/histoire/histoire.component';
 import { LocaliserComponent } from './onepage/localiser/localiser.component';
@@ -21,6 +22,7 @@ const Routes: Routes = [
     // {path:  'creerCompte', component: CreateAccountComponent }
 ];
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,7 @@ const Routes: Routes = [
     HistoireComponent,
     LocaliserComponent,
     ContactComponent
+
   ],
   imports: [
     BrowserModule,
