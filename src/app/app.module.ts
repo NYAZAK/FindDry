@@ -9,6 +9,7 @@ import { HeaderComponent } from './onepage/header/header.component';
 import { HistoireComponent } from './onepage/histoire/histoire.component';
 import { LocaliserComponent } from './onepage/localiser/localiser.component';
 import { ContactComponent } from './onepage/contact/contact.component';
+import { CreateAccountComponent } from './compte/create-account/create-account.component';
 
 
 const Routes: Routes = [
@@ -28,7 +29,8 @@ const Routes: Routes = [
     HeaderComponent,
     HistoireComponent,
     LocaliserComponent,
-    ContactComponent
+    ContactComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
