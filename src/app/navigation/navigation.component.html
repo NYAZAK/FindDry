@@ -13,18 +13,15 @@
   </div>
   <ul class=" menu_horizontal mt-5">
     <li>
-      <a href="#" class="text-light font-weight-bold">Accueil</a>
+      <a routerLink="/Accueil"  class="text-light font-weight-bold">Accueil</a>
     </li>
     <li>
-      <a href="#" class="text-light font-weight-bold">Notre histoire</a>
+      <a routerLink="/APropos"  class="text-light font-weight-bold">A propos </a>
     </li>
     <li>
-      <a href="#" class="text-light font-weight-bold">A propos </a>
-    </li>
+      <a routerLink="/Localiser"  class="text-light font-weight-bold">Localiser</a></li>
     <li>
-      <a href="#" class="text-light font-weight-bold">Telechargement</a></li>
-    <li>
-      <a href="#" class="text-light font-weight-bold">Contacts</a>
+      <a routerLink="/Contact"  class="text-light font-weight-bold">Contacts</a>
     </li>
   </ul>
   <div class="menu-burger mt-5">
@@ -34,13 +31,13 @@
         <span></span>
     </div>
   <ul class='menu-hamburger d-flex flex-column col-12 ' *ngIf="!disappear">
-    <li class="col-12 text-center" (click)="isDisappear()" ><a href="#" class="text-light font-weight-bold">Accueil</a></li>
-    <li class="col-12" (click)="isDisappear()"><a href="#" class="text-light font-weight-bold">Notre histoire</a></li>
-    <li class="col-12" (click)="isDisappear()"><a href="#" class="text-light font-weight-bold">A propos</a></li>
-    <li class="col-12" (click)="isDisappear()"><a href="#" class="text-light font-weight-bold">Telechargement</a></li>
-    <li class="col-12" (click)="isDisappear()"><a href="#" class="text-light font-weight-bold">Contacts</a></li>
+    <li class="col-12 text-center" (click)="isDisappear()" ><a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a></li>
+    <li class="col-12" (click)="isDisappear()"><a routerLink="/APropos" class="text-light font-weight-bold">A propos</a></li>
+    <li class="col-12" (click)="isDisappear()"><a routerLink="/Localiser" class="text-light font-weight-bold">Localiser</a></li>
+    <li class="col-12" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
   </ul>
 </div>
+<router-outlet></router-outlet>
 </div>
 <div *ngIf="!disappear">
 <div class="overlay" (click)="isDisappear()"></div>
