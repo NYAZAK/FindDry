@@ -1,4 +1,4 @@
-<div class="mb-5 app-section p-0">
+<div class="app-section p-0">
   <div class="creatCount float-right" style="width: 180px;">
     <span>
       <a routerLink="/Create">
@@ -34,11 +34,11 @@
         <span></span>
         <span></span>
     </div>
-  <ul class='menu-hamburger d-flex flex-column col-12 ' *ngIf="!disappear">
-    <li class="col-12 text-center" (click)="isDisappear()" ><a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a></li>
-    <li class="col-12" (click)="isDisappear()"><a routerLink="/APropos" class="text-light font-weight-bold">A propos</a></li>
-    <li class="col-12" (click)="isDisappear()"><a routerLink="/Localiser" class="text-light font-weight-bold">Localiser</a></li>
-    <li class="col-12" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
+  <ul class='menu-hamburger mx-auto position-absolute d-flex flex-column col-12 ' *ngIf="!disappear">
+    <li class="col-12 mb-5 h1" (click)="isDisappear()" ><a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a></li>
+    <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/APropos" class="text-light font-weight-bold">A propos</a></li>
+    <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/Localiser" class="text-light font-weight-bold">Localiser</a></li>
+    <li class="col-12 mt-5 h1" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
   </ul>
 </div>
 <router-outlet></router-outlet>
