@@ -4,20 +4,44 @@
     border-radius: 25px; 
 }
 .histoire{
-    border-radius: 10px;
-    margin-top:35px;
-    transition-delay: .5s;
+    transition-delay: 1s;
     cursor: pointer;
+    height: 400px !important;
+    overflow: hidden;
 }
 img:hover{
     background-color: rgba(255, 255, 255, 0.4);
 }
-
-h5:hover{
-    
+.histoire:hover{
+    transform: scale(1);
+    box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
 }
-
-.card{
-    border:0 !important;
-    background: transparent !important;
+.back-img{
+    background-color: #000000;
+}
+img{
+    opacity: 0.5;
+    min-height: 400px;
+}
+p{
+    font-weight: 500;
+    text-align: justify !important;
+    visibility: hidden;
+    position: absolute;
+    right: 30%;
+    transition: 2s linear;
+}
+.histoire:hover p {
+    transform: translate(100px, -101%);
+    visibility: visible;
+    padding-bottom: 20px;
+}
+h5{
+    top:50%;
+    left:10%;
+    font-size: 40px;
+    transition: 2s linear;
+}
+.histoire:hover h5{
+    top: 0;
 }

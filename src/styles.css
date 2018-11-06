@@ -5,8 +5,11 @@
 @import "~animate.css/animate.min.css";
 @import "~hover.css/css/hover-min.css";
 html, body{
-  overflow-x:hidden;
-  background-color: #53A0FD; 
+  background: #ffd89b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FFC66D, #53A0FD); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FFC66D, #53A0FD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  overflow-x: hidden !important;
 }
 
 .btnDry{
@@ -24,11 +27,9 @@ html, body{
 i{
   color: #ffffff;
 }
-
-html {
+html{
   font-size: 1rem;
 }
-
 @include media-breakpoint-up(sm) {
   html {
     font-size: 1.2rem;
@@ -51,5 +52,4 @@ html {
   margin-top: 0 !important;
   padding-top: 100px;
   width: 100% !important;
-  background-color:#53A0FD;
 }
