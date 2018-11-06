@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './onepage/header/header.component';
@@ -17,7 +18,9 @@ const Routes: Routes = [
     {path: 'Accueil', component: HeaderComponent},
     {path: 'APropos', component: HistoireComponent},
     {path: 'Localiser', component: LocaliserComponent},
-    {path: 'Contact', component: ContactComponent}
+    {path: 'Contact', component: ContactComponent},
+    {path: 'Create', component: CreateAccountComponent},
+    // {path: 'Connexion', component: ConnexionComponent},
     // {path:  'connexion', component: ConnexionComponent},
     // {path:  'creerCompte', component: CreateAccountComponent }
 ];
