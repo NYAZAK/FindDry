@@ -4,8 +4,9 @@
 @import "~font-awesome/css/font-awesome.css";
 @import "~animate.css/animate.min.css";
 @import "~hover.css/css/hover-min.css";
-body{
-  overflow-x:hidden; 
+html, body{
+  overflow-x:hidden;
+  background-color: #53A0FD; 
 }
 
 .btnDry{
@@ -49,7 +50,6 @@ html {
 .app-section{
   margin-top: 0 !important;
   padding-top: 100px;
-    width: 100% !important;
-    background-color:#53A0FD;
-
+  width: 100% !important;
+  background-color:#53A0FD;
 }
