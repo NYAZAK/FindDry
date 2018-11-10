@@ -38,6 +38,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-src/app/header/header\.component\.spec\.ts
-
-src/app/navigation/navigation\.component\.spec\.ts
+*.spec\.ts
