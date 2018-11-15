@@ -19,18 +19,16 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  postMessage(message) {
-    console.log('message posté', message);
+  postMessage() {
+    console.log('message posté', );
     if(this.formContact.valid) {
       // todo add to firebase
-      message = {
+      this.ContactS.sendMessage({
         nom: this.formContact.value.name,
         prenom: this.formContact.value.lastname,
         email: this.formContact.value.email,
         message: this.formContact.value.message
-      }
-      this.ContactS.sendMessage(message);
-      console.log('message apres', message);
+      });
     }
   }
 
