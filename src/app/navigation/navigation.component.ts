@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AuthServiceService } from '../compte/auth-service.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NavigationComponent {
   disappear: boolean = true;
-  constructor() { }
+  constructor(public AuthSS: AuthServiceService) { }
 
   isDisappear() {
     this.disappear = !this.disappear;
+  }
+
+  deconnxion(){
+    this.AuthSS.singOut();
   }
 }
