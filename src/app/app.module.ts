@@ -52,7 +52,7 @@ const CONFIG_FIREBASE: FirebaseAppConfig =  {
     HistoireComponent,
     LocaliserComponent,
     ContactComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
     ConnexionComponent
   ],
   imports: [

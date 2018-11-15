@@ -13,22 +13,17 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {
     this.formCreate = this.formBuilder.group({
-      // nom: ['', Validators.required],
-      // prenom: ['', Validators.required],
       mdp: ['', Validators.required],
-      // mdp2: ['', Validators.required],
       email: ['', Validators.required],
-      // email2: ['', Validators.required]
     });
   }
 
   CreateCount() {
-
       this.AuthSS.register(this.formCreate.value.email, this.formCreate.value.mdp)
       .then(createUser => {
         // TODO rest form
       }).catch(error => console.error(error.message));
-  
     } 
 
 }
+
