@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
+// Firebase 
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 // imports des services
 import {AuthServiceService} from './compte/auth-service.service';
@@ -57,8 +59,9 @@ const CONFIG_FIREBASE: FirebaseAppConfig =  {
     ReactiveFormsModule,
     AngularFireModule.initializeApp(CONFIG_FIREBASE),
     AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [AuthServiceService, AngularFireAuth],
+  providers: [AuthServiceService, AngularFireAuth, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
