@@ -18,7 +18,7 @@ import { HistoireComponent } from './onepage/histoire/histoire.component';
 import { LocaliserComponent } from './onepage/localiser/localiser.component';
 import { ContactComponent } from './onepage/contact/contact.component';
 import { CreateAccountComponent } from './compte/create-account/create-account.component';
-
+import { ConnexionComponent } from './compte/connexion/connexion.component';
 import { ContactService } from './onepage/contact.service';
 
 const routes: Routes = [
@@ -28,6 +28,7 @@ const routes: Routes = [
     {path: 'Localiser', component: LocaliserComponent},
     {path: 'Contact', component: ContactComponent},
     {path: 'Create', component: CreateAccountComponent},
+    {path: 'Connexion', component: ConnexionComponent},
     // {path: 'Connexion', component: ConnexionComponent},
     // {path:  'connexion', component: ConnexionComponent},
     // {path:  'creerCompte', component: CreateAccountComponent }
@@ -52,6 +53,7 @@ const CONFIG_FIREBASE: FirebaseAppConfig =  {
     LocaliserComponent,
     ContactComponent,
     CreateAccountComponent
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
