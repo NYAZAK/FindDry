@@ -19,6 +19,7 @@ import { LocaliserComponent } from './onepage/localiser/localiser.component';
 import { ContactComponent } from './onepage/contact/contact.component';
 import { CreateAccountComponent } from './compte/create-account/create-account.component';
 
+import { ContactService } from './onepage/contact.service';
 
 const routes: Routes = [
     {path: './', pathMatch: 'full', component: HeaderComponent},
