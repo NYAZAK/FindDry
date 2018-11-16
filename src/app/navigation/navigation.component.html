@@ -1,10 +1,17 @@
 <div class="app-section p-0">
   <div class="creatCount float-right" style="width: 180px;">
-    <!-- <span class="text-light">Bonjour <br> {{(AuthSS.user$ | async)?.email}}</span> -->
+    <!-- <span class="text-light">Bonjour <br> {{(AuthSS.user$ | async)?.email}}</span>   -->
     <span *ngIf="AuthSS.user$ | async" (click)='deconnxion()'>
       <a routerLink="/Accueil" >
-      <span class="infobulle ml-5" aria-label="se deconnecter">
+      <span class="infobulle" aria-label="se deconnecter">
         <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+      </span>
+      </a>
+    </span>
+    <span *ngIf="AuthSS.user$ | async">
+      <a routerLink="/ProfilUser" >
+      <span class="infobulle" aria-label="Profil">
+        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
       </span>
       </a>
     </span>
@@ -49,7 +56,6 @@
     <li class="col-12 mt-5 h1" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
   </ul>
 </div>
-<router-outlet></router-outlet>
 </div>
 <div *ngIf="!disappear">
 <div class="overlay" (click)="isDisappear()"></div>
