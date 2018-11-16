@@ -1,32 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ContactService } from '../contact.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent implements OnInit {
   formContact: FormGroup;
-  constructor(public fb: FormBuilder, private ContactS: ContactService) { }
+  misTouched= 'Vous n\'avez pas rempli le champs';
+
+  constructor(private fb: FormBuilder, public ContactS: ContactService) { }
 
   ngOnInit() {
     this.formContact = this.fb.group({
       name: ['', Validators.required],
       lastname: ['', Validators.required],
-      email: ['', Validators.required],
+      mail: ['', [Validators.required, 
+                  Validators.email]],
       message: ['', Validators.required],
     });
   }
 
   postMessage() {
-    console.log('message posté', );
-    if(this.formContact.valid) {
-      // todo add to firebase
-      this.ContactS.sendMessage({
+      if(this.formContact.valid){
+        this.ContactS.sendMessage({
         nom: this.formContact.value.name,
         prenom: this.formContact.value.lastname,
-        email: this.formContact.value.email,
+        mail: this.formContact.value.mail,
         message: this.formContact.value.message
       });
     }

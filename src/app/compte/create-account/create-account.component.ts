@@ -13,8 +13,8 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {
     this.formCreate = this.formBuilder.group({
-      mdp: ['', Validators.required],
-      email: ['', Validators.required],
+      mdp: ['', [Validators.required, Validators.minLength(7)]],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 

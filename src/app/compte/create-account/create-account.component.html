@@ -30,6 +30,6 @@
             <input type="password" class="form-control" name="confirmezMotDePasse" id="confirmezMotDePasse" placeholder="Confirmer mot de passe" formControlName="mdp2">
         </div> -->
       </div>
-    <button type="submit" class="btn btn-primary">Bienvenue !</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!formCreate.valid">Bienvenue !</button>
   </form>
 </div>
