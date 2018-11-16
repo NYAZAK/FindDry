@@ -1,18 +1,26 @@
 <div class="row col-12 app-section mx-auto">
-  <h2 class="text-center col-12 text-light">{{title}}</h2>
+  <h2 class="text-center col-12 text-light mb-5">{{title}}</h2>
   <form class="col-12 mx-auto" [formGroup]="formConnect" (ngSubmit)="connexion()">
     <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="email">Email</label>
+          <label for="email" class="text-light">Email</label>
           <input type="email" class="form-control" name="email" id="email" placeholder="Email" formControlName="email" >
         </div>
         <div class="form-group col-md-6">
-          <label for="motDePasse">Mot de passe</label>
+          <label for="motDePasse" class="text-light">Mot de passe</label>
           <input type="password" class="form-control"  name="motDePasse" id="motDePasse" placeholder="Mot de passe" formControlName="mdp" >
         </div>
+        <!-- <div class="form-group col-md-6">
+          <label for="name" class="text-light">Votre nom et prénom</label>
+          <input type="text" class="form-control"  name="name" id="name" placeholder="Jean Dupont" formControlName="name" >
+        </div>
+         <div class="form-group col-md-6">
+          <label for="pseudo" class="text-light">Choissisez un pseudo</label>
+          <input type="text" class="form-control"  name="pseudo" id="pseudo" placeholder="pseudo" formControlName="pseudo" >
+        </div> -->
       </div>
     <button type="submit" class="btn btn-primary">Connexion</button>
     <button *ngIf="AuthSS.user$ | async"  type="button" class="btn btn-info" (click)="AuthSS.sendEmailVerification()">Send mail</button>
-    <span *ngIf="AuthSS.user$ | async" >Connecté en tant que {{ (AuthSS.user$ | async)?.email }}</span>
+    <span *ngIf="AuthSS.user$ | async" >Connecté en tant que {{ (AuthSS.user$ | async)?.email }} -  {{AuthSS.userId}}</span>
   </form>
 </div>
