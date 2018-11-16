@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 // Firebase 
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -20,18 +20,19 @@ import { ContactComponent } from './onepage/contact/contact.component';
 import { CreateAccountComponent } from './compte/create-account/create-account.component';
 import { ConnexionComponent } from './compte/connexion/connexion.component';
 import { ContactService } from './onepage/contact.service';
-
+import { ProfilComponent } from './profils/profil/profil.component';
+import { ReservationComponent } from './profils/reservation/reservation.component';
+import { ProfilsComponent } from './profils/profils.component';
+import { ReservationSService } from './profils/reservation-s.service';
 const routes: Routes = [
-    {path: './', pathMatch: 'full', component: HeaderComponent},
+    {path: '', pathMatch: 'full', component: HeaderComponent},
     {path: 'Accueil', component: HeaderComponent},
     {path: 'APropos', component: HistoireComponent},
     {path: 'Localiser', component: LocaliserComponent},
     {path: 'Contact', component: ContactComponent},
     {path: 'Create', component: CreateAccountComponent},
     {path: 'Connexion', component: ConnexionComponent},
-    // {path: 'Connexion', component: ConnexionComponent},
-    // {path:  'connexion', component: ConnexionComponent},
-    // {path:  'creerCompte', component: CreateAccountComponent }
+    {path: 'ProfilUser', component: ProfilsComponent}
 ];
 
 
@@ -53,7 +54,10 @@ const CONFIG_FIREBASE: FirebaseAppConfig =  {
     LocaliserComponent,
     ContactComponent,
     CreateAccountComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    ProfilComponent,
+    ReservationComponent,
+    ProfilsComponent
   ],
   imports: [
     BrowserModule,
