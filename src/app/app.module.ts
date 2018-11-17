@@ -21,9 +21,8 @@ import { CreateAccountComponent } from './compte/create-account/create-account.c
 import { ConnexionComponent } from './compte/connexion/connexion.component';
 import { ContactService } from './onepage/contact.service';
 import { ProfilComponent } from './profils/profil/profil.component';
-import { ReservationComponent } from './profils/reservation/reservation.component';
 import { ProfilsComponent } from './profils/profils.component';
-import { ReservationSService } from './profils/reservation-s.service';
+import { BackEndProfilComponent } from './profils/back-end-profil/back-end-profil.component';
 const routes: Routes = [
     {path: '', pathMatch: 'full', component: HeaderComponent},
     {path: 'Accueil', component: HeaderComponent},
@@ -56,8 +55,8 @@ const CONFIG_FIREBASE: FirebaseAppConfig =  {
     CreateAccountComponent,
     ConnexionComponent,
     ProfilComponent,
-    ReservationComponent,
-    ProfilsComponent
+    ProfilsComponent,
+    BackEndProfilComponent
   ],
   imports: [
     BrowserModule,

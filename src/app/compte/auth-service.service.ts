@@ -45,4 +45,47 @@ export class AuthServiceService {
     }
   }
 
+
+  /* https://stackoverflow.com/questions/42125238/cant-get-firebase-userid
+
+ 
+function handleRegister() {
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var ref = firebase.database().ref();
+     console.log(email);
+     console.log(fname);
+
+        if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+
+     
+       firebase.auth().createUserWithEmailAndPassword(email, password) .then(function(user) {
+        var root = firebase.database().ref();
+        var uid = user.uid;
+        var postData = {
+        Firstname: fname,
+        Lastname: lname,
+        email: email
+      };
+          root.child("Users").child(uid).set(postData);
+      })
+        // Get a key for a new Post.
+      var newPostKey = firebase.database().ref().child('Users').push().uid;
+
+      var updates = {};
+      updates['/Users/' + newPostKey] = postData;
+      // updates['/user-posts/' + '/' + newPostKey] = postData;
+      return firebase.database().ref().update(updates);
+      })
+    }
+  */
 }
