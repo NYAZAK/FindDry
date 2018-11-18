@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/compte/auth-service.service';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 @Component({
   selector: 'app-user-profil',
   templateUrl: './user-profil.component.html',
@@ -15,10 +16,18 @@ export class UserProfilComponent implements OnInit, OnDestroy {
   myprofil: Profil[];
   profil$;
   profilSubscription: Subscription;
+  userId;
   constructor(private ProfilS: ProfilService, 
               private router: Router,
               public AuthSS: AuthServiceService,
-              public afdb: AngularFireDatabase) { }
+              public afdb: AngularFireDatabase,
+              public angularfa: AngularFireAuth, ) { 
+                this.angularfa.authState.subscribe(user => {
+                  if (user) {
+                    this.userId = user.uid;
+                    console.log('current token', this.userId);
+                  }
+                  }) }
 
   ngOnInit() {
     this.profilSubscription = this.ProfilS.profilSubject
@@ -26,17 +35,17 @@ export class UserProfilComponent implements OnInit, OnDestroy {
       this.myprofil = profil;
     });
 
-    this.profil$ =  this.afdb.list(`UserProfil`).valueChanges();
-    this.ProfilS.getProfil();
+    this.profil$ =  this.ProfilS.getProfil(this.userId);
+    
   }
 
   getprofil() {
-    return this.ProfilS.getProfil();
+    return this.ProfilS.getProfil(this.userId);
   }
   
 
   onDeleteMyProfil(profil: Profil) {
-    this.ProfilS.removeUser();
+    this.ProfilS.removeUser(this.userId);
   }
 
   onChangeProfil() {

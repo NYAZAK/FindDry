@@ -15,39 +15,31 @@ export class ProfilService {
   profilSubject = new Subject<Profil[]>();
   userId: string;
   profil$;
+
   constructor(private angularfa: AngularFireAuth, private afdb: AngularFireDatabase) { 
     this.angularfa.authState.subscribe(user =>
       {if(user) {
         this.userId = user.uid
         console.log(this.userId);
       }})
-    this.getProfil();
+    this.getProfil(this.userId);
    }
 
-  saveProfil() {
-    firebase.database().ref(`UserProfil`).set(this.myprofil);
+  saveProfil(id) {
+    firebase.database().ref(`/UserProfil/${id}`).set(this.myprofil);
   }
 
-  getProfil() {
-   return this.profil$ =  this.afdb.list(`UserProfil`).valueChanges(); 
-    // firebase.database().ref('/UserProfil')
-    // .on('value', (data: DataSnapshot) => {
-    //   this.myprofil = data.val() ? data.val() : console.log('pas de données');
-
-    // })
-    // console.log('gertpers', this.userId);
-    //   return this.afdb.list(`/UserProfil`).snapshotChanges().pipe(map(infos => 
-    //    infos.map(info => 
-    //    ({ key: info.key, ...info.payload.val() }))));
+  getProfil(id) {
+   return this.profil$ =  this.afdb.list(`UserProfil/${id}`, ref => ref.limitToLast(1)).valueChanges(); 
   }
 
-  CreateAccount(newProfil: Profil) {
-    this.afdb.list('/UserProfil').push(newProfil);
+  CreateAccount(newProfil: Profil,id) {
+    this.afdb.list(`/UserProfil/${id}`).push(newProfil);
  
   }
 
-  removeUser() {
-    firebase.database().ref('/UserProfil').remove();
+  removeUser(id:number) {
+    firebase.database().ref(`/UserProfil/${this.userId}/${id}`).remove();
   }
 
 
