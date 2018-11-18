@@ -1,0 +1,42 @@
+<div class=" row  mt-5 col-12 modifier text-light">
+  <div class="presentationProfil row col-12 text-center">
+      <h2 class=" col-8 mx-auto mt-5 text-center text-light font-weight-bold">
+          mes infos
+          {{(AuthSS.user$ | async)?.email }}
+      </h2>
+  </div>
+  <div class="row mt-5 col-12">
+         <div class="card bg-dark col-12 p-5 col-lg-8 mx-auto" *ngFor="let info of profil$ | async">
+        <div class="row">  
+          <div class="form-group col-6">
+            <p>nom : {{info.name}}</p>   
+          </div>
+          <div class="form-group col-6">
+            <p>prenom : {{info.firstname}}</p> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <p>date de naissance : {{info.dateboren}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <p>adresse: {{info.address}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <p>code postal : {{info.cp}}</p>
+          </div>
+          <div class="form-group col-6">
+            <p>Ville : {{info.city}} </p>
+          </div>
+        </div>
+        <button class="col-3 btn btn-warning" (click)="onChangeProfil()" type="button">Modifier mes infos</button>
+      </div>
+  </div>
+  <div class="row">
+  </div>
+</div>
+    

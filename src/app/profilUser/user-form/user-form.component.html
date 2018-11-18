@@ -1,0 +1,51 @@
+<div class="row  mt-5 col-12 text-light">
+    <div class="row col-12 text-center">
+      <h2 class="text-center  mt-5 col-12 font-weight-bold">
+          Mes infos
+      </h2>
+    </div>
+    <div class="row  mt-3  mx-auto col-12 info_client text-light">
+    <form class="p-5 col-12" [formGroup]="ProfilUserForm" (click)='onSaveProfil()'>
+      <div class="modifier">
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="name">Nom</label>
+            <input type="text" formControlName="name" class="form-control">
+          </div>
+          <div class="form-group col-6">
+            <label for="firstname">Prenom</label>
+            <input type="text" formControlName="firstname" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="dateborne">Date de naissance</label>
+            <input type="text" formControlName="dateborne" class="form-control">
+          </div>
+          <div class="form-group col-6">
+            <label for="tel">numéro téléphone</label>
+            <input type="tel" formControlName="tel" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12">
+            <label for="address">Adresse</label>
+            <input type="text" formControlName="address" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="cp">Code Postal</label>
+            <input type="text" formControlName="cp" class="form-control">
+          </div>
+          <div class="form-group col-6">
+            <label for="city">Ville</label>
+            <input type="text" formControlName="city" class="form-control">
+          </div>
+        </div>
+      </div>  
+  <button [disabled]="ProfilUserForm.invalid" type="submit" class="btn btn-success">Valider</button>
+  <button type='button'class='btn btn-info' [routerLink]="['/ProfilUser']">Mes infos</button>
+  </form>
+  </div>
+</div>

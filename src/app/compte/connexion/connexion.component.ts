@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
@@ -11,21 +12,26 @@ export class ConnexionComponent implements OnInit {
   title = "Connectez vous";
   isConnect: boolean = false;
   
-  constructor(private formBuilder: FormBuilder, public AuthSS: AuthServiceService ) { }
+  constructor(private formBuilder: FormBuilder, public AuthSS: AuthServiceService, private route: Router,) { }
 
   ngOnInit() {
-    this.formConnect = this.formBuilder.group({
-      email: ['', Validators.required],
-      mdp: ['', Validators.required],
-      pseudo: ['', Validators.required],
-      name: ['', Validators.required]
-    })
+    this.initFormConnexion();
   }
 
+    initFormConnexion(){
+      this.formConnect = this.formBuilder.group({
+        email: ['', Validators.required],
+        mdp: ['',[Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
+      })
+    }
+
   connexion(){
-    this.AuthSS.login(this.formConnect.value.email, this.formConnect.value.mdp)
-    .then(value => {
+    const email = this.formConnect.get('email').value;
+    const mdp = this.formConnect.get('mdp').value;
+    this.AuthSS.login(email, mdp)
+    .then(() => {
       console.log('votre compte');
+      this.route.navigate(['/ProfilUser'])
     })
     .catch(err =>  { 
       console.error('erreur : (', err.message);

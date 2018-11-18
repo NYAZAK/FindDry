@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {AuthServiceService} from '../auth-service.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -9,19 +10,26 @@ import {AuthServiceService} from '../auth-service.service';
 export class CreateAccountComponent implements OnInit {
   title = 'Créez votre compte chez FindDry';
   formCreate: FormGroup;
-  constructor(private formBuilder: FormBuilder, private AuthSS: AuthServiceService) { }
+  constructor(private formBuilder: FormBuilder, private AuthSS: AuthServiceService, private route: Router) { }
 
   ngOnInit() {
+    this.initFormCreateAccount();
+  }
+
+  initFormCreateAccount(){
     this.formCreate = this.formBuilder.group({
-      mdp: ['', [Validators.required, Validators.minLength(7)]],
+      mdp: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
       email: ['', [Validators.required, Validators.email]],
     });
   }
 
   CreateCount() {
-      this.AuthSS.register(this.formCreate.value.email, this.formCreate.value.mdp)
-      .then(createUser => {
+    const email = this.formCreate.get('email').value;
+    const mdp = this.formCreate.get('mdp').value;
+      this.AuthSS.register(email,mdp)
+      .then(() => {
         // TODO rest form
+        this.route.navigate(['/ProfilUser']);
       }).catch(error => console.error(error.message));
     } 
 
