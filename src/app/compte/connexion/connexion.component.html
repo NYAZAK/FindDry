@@ -10,14 +10,6 @@
           <label for="motDePasse" class="text-light">Mot de passe</label>
           <input type="password" class="form-control"  name="motDePasse" id="motDePasse" placeholder="Mot de passe" formControlName="mdp" >
         </div>
-        <!-- <div class="form-group col-md-6">
-          <label for="name" class="text-light">Votre nom et prénom</label>
-          <input type="text" class="form-control"  name="name" id="name" placeholder="Jean Dupont" formControlName="name" >
-        </div>
-         <div class="form-group col-md-6">
-          <label for="pseudo" class="text-light">Choissisez un pseudo</label>
-          <input type="text" class="form-control"  name="pseudo" id="pseudo" placeholder="pseudo" formControlName="pseudo" >
-        </div> -->
       </div>
     <button type="submit" class="btn btn-primary">Connexion</button>
     <button *ngIf="AuthSS.user$ | async"  type="button" class="btn btn-info" (click)="AuthSS.sendEmailVerification()">Send mail</button>
