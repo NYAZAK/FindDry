@@ -1,15 +1,15 @@
 <div class="row col-12 app-section mx-auto">
 
-  <h2 class="text-center col-12 text-light">{{title}}</h2>
-  <form class="col-12 mx-auto" [formGroup]="formCreate" (ngSubmit)="CreateCount()">
+  <h2 class="text-center col-12 text-light mb-5">{{title}}</h2>
+  <form class="col-8 mx-auto" [formGroup]="formCreate" (ngSubmit)="CreateCount()">
   
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6 text-light">
           <label for="email">Email</label>
           <input type="email" class="form-control" name="email" id="email" placeholder="Email" formControlName="email" >
         </div>
        
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6 text-light">
           <label for="motDePasse">Mot de passe</label>
           <input type="password" class="form-control"  name="motDePasse" id="motDePasse" placeholder="Mot de passe" formControlName="mdp" >
         </div>

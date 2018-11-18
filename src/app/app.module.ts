@@ -22,19 +22,18 @@ import { ContactComponent } from './onepage/contact/contact.component';
 import { CreateAccountComponent } from './compte/create-account/create-account.component';
 import { ConnexionComponent } from './compte/connexion/connexion.component';
 import { ContactService } from './onepage/contact.service';
-
-
+import { UserFormComponent } from './profilUser/user-form/user-form.component';
+import { UserProfilComponent } from './profilUser/user-profil/user-profil.component';
 
 const routes: Routes = [
-  
   { path: 'Accueil', component: HeaderComponent },
   { path: 'APropos', component: HistoireComponent },
   { path: 'Localiser', component: LocaliserComponent },
   { path: 'Contact', component: ContactComponent },
   { path: 'Create', component: CreateAccountComponent },
   { path: 'Connexion', component: ConnexionComponent },
-  // {path: 'ChangeMesInfos', canActivate: [AuthGuardServiceService], component: ProfilsComponent },
-  // { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: BackEndProfilComponent }, // /:userid/:id
+  {path: 'ChangeMesInfos', canActivate: [AuthGuardServiceService], component: UserFormComponent },
+  { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: UserProfilComponent }, // /:userid/:id
   { path: '', pathMatch: 'full', component: HeaderComponent },
   { path: '**', redirectTo: 'ProfilUser' }
 ];
@@ -58,7 +57,8 @@ const CONFIG_FIREBASE: FirebaseAppConfig = {
     ContactComponent,
     CreateAccountComponent,
     ConnexionComponent,
- 
+    UserFormComponent,
+    UserProfilComponent,
   ],
   imports: [
     BrowserModule,
