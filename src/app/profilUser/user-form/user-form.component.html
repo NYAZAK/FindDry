@@ -5,7 +5,7 @@
       </h2>
     </div>
     <div class="row  mt-3  mx-auto col-12 info_client text-light">
-    <form class="p-5 col-12" [formGroup]="ProfilUserForm" (click)='onSaveProfil()'>
+    <form class="p-5 col-12" [formGroup]="ProfilUserForm" (ngSubmit)='onSaveProfil()' >
       <div class="modifier">
         <div class="row">
           <div class="form-group col-6">
@@ -44,8 +44,8 @@
           </div>
         </div>
       </div>  
-  <button [disabled]="ProfilUserForm.invalid" type="submit" class="btn btn-success">Valider</button>
-  <button type='button'class='btn btn-info' [routerLink]="['/ProfilUser']">Mes infos</button>
+  <button [disabled]="ProfilUserForm.invalid" type="submit" class="btn btn-success col-2">Valider</button>
   </form>
   </div>
+  <button type='button'class='btn btn-info col-2 mx-auto' [routerLink]="['/ProfilUser']">Mes infos</button>
 </div>
