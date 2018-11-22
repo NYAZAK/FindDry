@@ -38,7 +38,6 @@ export class UserFormComponent implements OnInit {
 	}
 
 	onSaveProfil() {
-	
 		const name = this.ProfilUserForm.get('name').value;
 		const firstname = this.ProfilUserForm.get('firstname').value;
 		const dateborne = this.ProfilUserForm.get('dateborne').value;
@@ -51,6 +50,4 @@ export class UserFormComponent implements OnInit {
 		this.ProfilS.CreateAccount(userProfil,uid);
 		this.route.navigate(['/ProfilUser']);
 	}
-
-
 }
