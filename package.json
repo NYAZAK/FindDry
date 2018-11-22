@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "angularfire2": "^5.1.0",
     "animate-js": "^0.3.2",
     "animate.css": "^3.7.0",
@@ -28,7 +29,10 @@
     "firebase": "^5.5.8",
     "font-awesome": "^4.7.0",
     "hover.css": "^2.3.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.5",
     "rxjs": "~6.2.0",
+    "timepicker": "^1.11.14",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

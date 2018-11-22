@@ -1,0 +1,124 @@
+<div class="container text-center text-light" style="margin-top: 10% !important; padding-bottom: 5%">
+  <h2 class="mt-5">Programmez un passage</h2>
+  <form [formGroup]="monRamassage" (ngSubmit)="myNewFormule()">
+    <h3 class="text-center h6 mt-5 mb-5">Quel jour souhaitez vous programmez un passage ?</h3>
+    <ngb-datepicker class="mx-auto" formControlName="date" [minDate]="today"></ngb-datepicker>
+    <hr> 
+    <h3 class="text-center h6 mt-5 mb-5">Choissisez une heure de passage :</h3>
+    <div class="heure"> 
+    <ngb-timepicker formControlName="heure"></ngb-timepicker>
+  </div>
+  <hr> 
+  <div class="formule">
+      <h3 class="text-center h6 mt-5 mb-5">Pour quelle formule ?</h3>
+      <div class="btn-group btn-group-toggle">
+          <label class="btn btn-success" ngbButtonLabel>
+            <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="lavage1"> Lavage
+          </label>
+          <label class="btn btn-info" ngbButtonLabel>
+            <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="blanchissage1"> Blanchissage
+          </label>
+          <label class="btn btn-light" ngbButtonLabel>
+            <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="retouche1"> Retouche
+          </label>
+          <label class="btn btn-primary" ngbButtonLabel>
+            <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="repassage1"> Repassage
+          </label>
+        </div>
+  </div>
+  </form>
+{{monRamassage.value.date | json}} <br>
+{{monRamassage.value.heure | json}}<br>
+<span *ngIf="monRamassage.value.lavage1 == true">{{monRamassage.value.lavage}}</span> &nbsp; <br>
+<span *ngIf="monRamassage.value.blanchissage1 == true">{{monRamassage.value.blanchissage}}</span> &nbsp; <br>
+<span *ngIf="monRamassage.value.retouche1 == true">{{monRamassage.value.retouche}}</span> &nbsp; <br>
+<span *ngIf="monRamassage.value.repassage1 == true">{{monRamassage.value.repassage}}</span> &nbsp; <br>
+</div>
+
+
+<!-- 
+<div class="container text-center text-light" style="margin-top: 10% !important; padding-bottom: 5%">
+  <h2 class="mt-5">Programmez un passage</h2>
+  <div class="row col-xs-12 col-sm-12 col-md-8 col-lg-8  card mx-auto text-dark">
+    <form [formGroup]="ReservationForm" class="mt-5 mx-auto" (ngSubmit)='myNewFormule()'>
+    <div class="row">
+        <div class=" mt-5 col-12">
+          <h4 class="text-center m-2">Quelle Formule?</h4>
+          <div class="custom-control text-left custom-checkbox">
+              <div class="btn-group btn-group-toggle"  >
+                  <label class="btn btn-primary" ngbButtonLabel >
+                    <input type="checkbox" (click)="chooseFormule()" formControlName="lavage1" ngbButton> Lavage
+                  </label>
+                  <label class="btn btn-primary" ngbButtonLabel>
+                    <input type="checkbox" (click)="chooseFormule()" formControlName="blanchissage1" ngbButton> Blanchissage
+                  </label>
+                  <label  class="btn btn-primary" ngbButtonLabel>
+                    <input type="checkbox" (click)="chooseFormule()" formControlName="retouche1" ngbButton > Retouche
+                  </label>
+                  <label class="btn btn-primary" ngbButtonLabel  >
+                      <input type="checkbox" (click)="chooseFormule()" formControlName="repassage1" ngbButton> Repassage
+                  </label>
+                </div>
+              <hr> 
+          </div>
+        </div>
+      </div>
+    <div class="row col-12 ">
+      <h4 class="text-center mx-auto">Quel jour & quelle heure?</h4>
+      <div class="dateheure  col-12">
+        <div class="row col-6 col-xs-12 col-sm-12 mx-auto">
+          <!-- <form class="form-inline mx-auto " (ngSubmit)='myNewFormule()'> 
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder='date de ramassage' name="model" 
+                  ngbDatepicker #d2="ngbDatepicker" [minDate]="today">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+            <hr>
+          
+          <div class="mx-auto">         
+              <ngb-timepicker></ngb-timepicker>
+          </div>
+        </div>
+        <hr class="col-6">
+        <div class="row col-6 mx-auto">
+          <button type="b" class="btn btn-sm btn-outline-primary mx-auto" (click)="isToday()">Aujourd'hui ?</button>
+        </div>
+        <hr class="col-6">
+        
+      </div>
+
+    <p class="mx-auto col-5">
+      votre prochain passage aura lieu : <br>
+      <span *ngIf='dateIsChossed'>{{ (model)?.day }} / {{ (model)?.month }} /{{ (model)?.year }}
+        à {{time.hour}} heure {{time.minute}} 
+      </span>
+      <span *ngIf='!dateIsChossed'>Choissisez une date et heure</span> <br>
+      pour un <br>
+      <span *ngIf="ReservationForm.value.lavage1">
+        {{(ReservationForm.value)?.lavage}} 
+      </span><br>
+      <span *ngIf="ReservationForm.value.blanchissage1"> 
+        {{(ReservationForm.value)?.blanchissage }} 
+       </span><br>
+      <span *ngIf="ReservationForm.value.retouche1">
+        {{(ReservationForm.value)?.retouche }} 
+        </span><br>
+      <span *ngIf="ReservationForm.value.repassage1"> 
+        {{(ReservationForm.value)?.repassage}}
+      </span><br>
+    </p>
+    <button type="submit" class="btn btn-success">Valider mon passage</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+<hr>
+<pre>Selected time: {{ time }}</pre> 
+
+
+-->
