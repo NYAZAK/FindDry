@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'Create', component: CreateAccountComponent },
   { path: 'Connexion', component: ConnexionComponent },
   {path: 'ChangeMesInfos', canActivate: [AuthGuardServiceService], component: UserFormComponent },
+  { path: 'ChangeMesInfos', canActivate: [AuthGuardServiceService], component: UserFormComponent },
   { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: UserProfilComponent }, // /:userid/:id
   { path: '', pathMatch: 'full', component: HeaderComponent },
   { path: '**', redirectTo: 'ProfilUser' }

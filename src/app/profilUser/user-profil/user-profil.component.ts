@@ -12,7 +12,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./user-profil.component.css']
 })
 export class UserProfilComponent implements OnInit, OnDestroy {
-
   myprofil: Profil[];
   profil$;
   profilSubscription: Subscription;
@@ -28,33 +27,29 @@ export class UserProfilComponent implements OnInit, OnDestroy {
                     console.log('current token', this.userId);
                   }
                   }) }
-
   ngOnInit() {
     this.profilSubscription = this.ProfilS.profilSubject
     .subscribe((profil: Profil[]) => {
       this.myprofil = profil;
     });
-
-    this.profil$ =  this.ProfilS.getProfil(this.userId);
-    
+    this.profil$ =  this.ProfilS.getProfil(this.userId); 
   }
-
   getprofil() {
     return this.ProfilS.getProfil(this.userId);
   }
-  
-
   onDeleteMyProfil(profil: Profil) {
     this.ProfilS.removeUser(this.userId);
   }
-
   onChangeProfil() {
     this.router.navigate(['/ChangeMesInfos']);
   }
-
+  mesPassages(){
+    this.router.navigate(['/Reservations']);
+  }
+  nouveauPassage(){
+    this.router.navigate(['/ReservationsForm']);
+  }
   ngOnDestroy() {
     this.profilSubscription.unsubscribe();
-
   }
-
 }
