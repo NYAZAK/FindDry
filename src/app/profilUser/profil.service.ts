@@ -39,7 +39,7 @@ export class ProfilService {
   }
 
   removeUser(id:number) {
-    firebase.database().ref(`/UserProfil/${this.userId}/${id}`).remove();
+    firebase.database().ref(`/UserProfil/${id}`).remove();
   }
 
 
