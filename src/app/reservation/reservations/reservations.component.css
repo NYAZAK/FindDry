@@ -1,0 +1,16 @@
+.tickets:hover{
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.text-petit {
+    font-size: 12px !important;
+}
+
+.text-titre{
+    font-size: 12px !important;
+}
+
+.card, .card-body{
+    background-color: #20dddd9b !important;
+    border-radius: 5px;
+}

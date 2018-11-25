@@ -1,0 +1,5 @@
+@media screen and (max-width: 414px ){
+    .formule .btn-group-toggle label{
+        font-size: 14px !important;
+    }
+}

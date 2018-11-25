@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, AngularFireList, AngularFireObject  } from "angularfire2/database";
+
 import { Observable }  from 'rxjs';
 import * as firebase from 'firebase/app';
 
@@ -15,7 +15,7 @@ export class AuthServiceService {
   user$ : Observable<firebase.User> = null;
 
   userId: string;
-  constructor(private angularfa: AngularFireAuth, private db : AngularFireDatabase) { 
+  constructor(private angularfa: AngularFireAuth) { 
     this.user$ = angularfa.authState;
     this.angularfa.authState.subscribe(user => {
       if(user) this.userId = user.uid

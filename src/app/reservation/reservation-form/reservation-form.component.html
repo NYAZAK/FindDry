@@ -1,38 +1,56 @@
-<div class="container text-center text-light" style="margin-top: 10% !important; padding-bottom: 5%">
+<div class="container-fluid text-center text-light" style="margin-top: 10% !important; padding-bottom: 5%">
   <h2 class="mt-5">Programmez un passage</h2>
   <form [formGroup]="monRamassage" (ngSubmit)="myNewFormule()">
-    <h3 class="text-center h6 mt-5 mb-5">Quel jour souhaitez vous programmez un passage ?</h3>
-    <ngb-datepicker class="mx-auto" formControlName="date" [minDate]="today"></ngb-datepicker>
+    <div class="card text-dark">
+    <h3 class="text-center h6 ">Quel jour souhaitez vous programmez un passage ?</h3>
+    <!-- <ngb-datepicker class="mx-auto" formControlName="date" [minDate]="today"></ngb-datepicker> -->
+    <div class="form-group col-8 mx-auto">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                 [showWeekNumbers]="showWeekNumbers" [minDate]="today" ngbDatepicker #d="ngbDatepicker" formControlName="date">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
     <hr> 
-    <h3 class="text-center h6 mt-5 mb-5">Choissisez une heure de passage :</h3>
+    <h3 class="text-center h6 ">Choissisez une heure de passage :</h3>
     <div class="heure"> 
     <ngb-timepicker formControlName="heure"></ngb-timepicker>
   </div>
+  </div>
   <hr> 
-  <div class="formule">
-      <h3 class="text-center h6 mt-5 mb-5">Pour quelle formule ?</h3>
-      <div class="btn-group btn-group-toggle">
-          <label class="btn btn-success" ngbButtonLabel>
+  <div class="formule col-12  p-0 m-0">
+      <h3 class="text-center h6">Pour quelle formule ?</h3>
+      <div class="row btn-group btn-group-toggle col-12 p-0 m-0" >
+          <label class="btn btn-success  col-md-3 col-xs-6 col-sm-6" ngbButtonLabel>
             <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="lavage1"> Lavage
           </label>
-          <label class="btn btn-info" ngbButtonLabel>
+          <label class="btn btn-info col-md-3 col-xs-6 col-sm-6" ngbButtonLabel>
             <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="blanchissage1"> Blanchissage
           </label>
-          <label class="btn btn-light" ngbButtonLabel>
+          <label class="btn btn-light col-md-3 col-xs-6 col-sm-6" ngbButtonLabel>
             <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="retouche1"> Retouche
           </label>
-          <label class="btn btn-primary" ngbButtonLabel>
+          <label class="btn btn-dark col-md-3 col-xs-6 col-sm-6" ngbButtonLabel>
             <input type="checkbox" (click)="chooseFormule()" ngbButton formControlName="repassage1"> Repassage
           </label>
         </div>
   </div>
+  <button type="submit" (click)="handlePayment()" class="btn btn-primary mt-5">Valider le passage</button>
   </form>
-{{monRamassage.value.date | json}} <br>
-{{monRamassage.value.heure | json}}<br>
-<span *ngIf="monRamassage.value.lavage1 == true">{{monRamassage.value.lavage}}</span> &nbsp; <br>
-<span *ngIf="monRamassage.value.blanchissage1 == true">{{monRamassage.value.blanchissage}}</span> &nbsp; <br>
-<span *ngIf="monRamassage.value.retouche1 == true">{{monRamassage.value.retouche}}</span> &nbsp; <br>
-<span *ngIf="monRamassage.value.repassage1 == true">{{monRamassage.value.repassage}}</span> &nbsp; <br>
+<div class="monTicket">
+  <p>Votre prochain ramassage aura lieu le {{monRamassage.value.date.day}}/{{monRamassage.value.date.month}}/{{monRamassage.value.date.year}}
+ à {{monRamassage.value.heure.hour}} h {{monRamassage.value.heure.minute}}
+  </p>
+<ul>
+  <li *ngIf="monRamassage.value.lavage1 == true">{{monRamassage.value.lavage}}</li>
+  <li *ngIf="monRamassage.value.blanchissage1 == true">{{monRamassage.value.blanchissage}}</li>
+  <li *ngIf="monRamassage.value.retouche1 == true">{{monRamassage.value.retouche}}</li>
+  <li *ngIf="monRamassage.value.repassage1 == true">{{monRamassage.value.repassage}}</li>
+</ul>
+</div>
 </div>
 
 

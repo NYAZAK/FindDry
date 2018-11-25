@@ -10,6 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class NavigationComponent {
   disappear: boolean = true;
   userId;
+  
   constructor(public AuthSS: AuthServiceService,
               private router: Router,
               public angularfa: AngularFireAuth,) {
@@ -21,6 +22,7 @@ export class NavigationComponent {
                   }})
                }
 
+
   isDisappear() {
     this.disappear = !this.disappear;
   }
@@ -29,8 +31,7 @@ export class NavigationComponent {
     this.AuthSS.singOut();
   }
 
-  // seeMyProfil(info){
-  //   info.userId = this.userId
-  //   this.router.navigate(['/ProfilUser', this.userid, info.key]);
-  // }
+  seeMyProfil(){
+    this.router.navigate(['/ProfilUser']);
+  }
 }

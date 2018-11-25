@@ -5,7 +5,8 @@ button {
   top: 50%;
   max-width: 350px !important;
 }
-.telechargee{
+
+.telechargee {
   transform: translate(-50%, 120%);
 }
 
@@ -19,12 +20,78 @@ app-navigation {
   height: 100%;
   overflow-y: hidden;
 }
-.mobile{
+
+.mobile {
   max-width: 400px !important;
 }
 
-.header{
+.imgheader {
   width: 100%;
-  height: 100%;
- 
+  height: 500px;
+  background-image: url('../../../assets/img-content/source.gif');
+  /* background-size: cover; */
+  background-position: center;
+}
+
+.vendeur {
+  font-size: 12rem;
+  border: 20px solid #ffffff;
+  padding: 30px;
+  padding-left: 0 !important;
+  color: #ffeaea !important;
+  width: 100% !important;
+}
+
+.imglocamin {
+  transition-duration: 0.3s;
+  max-width: 400px !important;
+}
+
+@media screen and (max-width: 760px) {
+  .vendeur {
+    font-size: 10rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .vendeur {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .vendeur {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .vendeur {
+    font-size: 4rem;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .mobile {
+    width: 280px !important;
+    height: 550px;
+    top: 20%;
+    left: 2%;
+  }
+  .imglocamin {
+    transition-duration: 0.3s;
+    max-width: 250px !important;
+  }
+
+  button {
+   margin-top:100%;
+  }
+}
+
+
+.header{
+  margin-top: 5% !important;
 }

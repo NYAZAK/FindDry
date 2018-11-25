@@ -5,6 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './profilUser/material.module';
+// import { MaterialadModule } from './admin/materialad.module';
 // Firebase 
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -29,21 +32,25 @@ import { ReservationsComponent } from './reservation/reservations/reservations.c
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
 import { AdminConnexionComponent } from './admin/admin-connexion/admin-connexion.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminviewComponent } from './admin/adminview.component';
+import { ResponseComponent } from './response/response/response.component';
+import { ProfiluserComponent } from './profilUser/profiluser.component';
+import { StripeComponent } from './payment/stripe/stripe.component';
 
 const routes: Routes = [
+  
   { path: 'Accueil', component: HeaderComponent },
   { path: 'APropos', component: HistoireComponent },
   { path: 'Localiser', component: LocaliserComponent },
   { path: 'Contact', component: ContactComponent },
   { path: 'Create', component: CreateAccountComponent },
   { path: 'Connexion', component: ConnexionComponent },
-  { path: 'ChangeMesInfos', canActivate: [AuthGuardServiceService], component: UserFormComponent },
-  { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: UserProfilComponent }, // /:userid/:id
-  { path: 'Reservations', canActivate: [AuthGuardServiceService], component: ReservationsComponent },
-  { path: 'ReservationsForm', canActivate: [AuthGuardServiceService], component: ReservationFormComponent },
-  { path: 'Admin', canActivate: [AuthGuardServiceService], component: AdminConnexionComponent },
+  { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: ProfiluserComponent }, // /:userid/:id
+  { path: 'Adminconnect', component: AdminConnexionComponent },
+  { path: 'Adminview', canActivate: [AuthGuardServiceService], component: AdminviewComponent },
+  { path: 'Payment', canActivate: [AuthGuardServiceService], component: StripeComponent },
   { path: '', pathMatch: 'full', component: HeaderComponent },
-  { path: '**', redirectTo: 'ProfilUser' }
+  { path: '**', redirectTo: 'Accueil' }
 ];
 
 const CONFIG_FIREBASE: FirebaseAppConfig = {
@@ -71,6 +78,10 @@ const CONFIG_FIREBASE: FirebaseAppConfig = {
     ReservationFormComponent,
     AdminConnexionComponent,
     AdminDashboardComponent,
+    AdminviewComponent,
+    ResponseComponent,
+    ProfiluserComponent,
+    StripeComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +92,10 @@ const CONFIG_FIREBASE: FirebaseAppConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    // MaterialadModule
   ],
   providers: [
     AuthServiceService,

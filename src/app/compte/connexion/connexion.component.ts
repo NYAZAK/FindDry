@@ -12,7 +12,8 @@ export class ConnexionComponent implements OnInit {
   title = "Connectez vous";
   isConnect: boolean = false;
   
-  constructor(private formBuilder: FormBuilder, public AuthSS: AuthServiceService, private route: Router,) { }
+  constructor(private formBuilder: FormBuilder,
+     public AuthSS: AuthServiceService, private route: Router,) { }
 
   ngOnInit() {
     this.initFormConnexion();
@@ -31,10 +32,11 @@ export class ConnexionComponent implements OnInit {
     this.AuthSS.login(email, mdp)
     .then(() => {
       console.log('votre compte');
-      this.route.navigate(['/ProfilUser'])
+      this.route.navigate(['/ProfilUser']);
     })
     .catch(err =>  { 
       console.error('erreur : (', err.message);
     });
+   
   }
 }

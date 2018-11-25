@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Reservation } from './reservation.model';
+import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
   userId;
-  myFormule;
+  ResaSubject = new Subject<Reservation[]>();
+  myReservation: Reservation; 
   formule$;
   constructor(private angularfa: AngularFireAuth,
               private afdb: AngularFireDatabase) { 
@@ -22,11 +25,14 @@ export class ReservationService {
 
 
               saveFormule(id) {
-                firebase.database().ref(`Formules/${id}`).set(this.myFormule);
+                firebase.database().ref(`/Formules/${id}`).set(this.myReservation);
+              }
+              createReseration(newReservation: Reservation, id) {
+                this.afdb.list(`/Formules/${id}`).push(newReservation);
               }
 
               getMyFormule(id) {
-                return this.formule$ = this.afdb.list(`Formules/${id}`, ref => ref.limitToLast(10)).valueChanges();
+                return this.afdb.list(`/Formules/${id}`).valueChanges();
               }
 
               removeMylastFormule(id) {
