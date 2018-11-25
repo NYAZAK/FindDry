@@ -1,3 +1,21 @@
-<p>
-  reservations works!
-</p>
+<div class="container text-light">
+  <div class="row col-12">
+    <h2 class="text-center col-12 mt-5">Historiques de passages</h2>
+  </div>
+  <div *ngFor="let resa of Reservation$ | async" class="tickets border-primary mx-auto mt-5 col-sm-12 col-xs-12 col-md-8 col-lg-8" >
+    <h2 class="h6 text-titre">date : {{resa.date.day}}/ {{resa.date.month}}/ {{resa.date.year}}
+      <p class="float-right"> heure: {{resa.time.hour}} h {{resa.time.minute}}</p> <br></h2>
+    <div class=" moment col-12">
+      <ul class="card-body col-12 text-petit">Votre ramassage pour : <br>
+        <div class="card-text">
+          <li *ngIf="resa.formule.blanchissage">un blanchissage,</li>
+          <li *ngIf="resa.formule.lavage">un lavage,</li>
+          <li *ngIf="resa.formule.repassage">un repassage,</li>
+          <li *ngIf="resa.formule.retouche"> et une retouche</li>
+        </div>
+      </ul>
+    </div>
+    <hr>
+  </div>
+</div>
+
