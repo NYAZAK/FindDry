@@ -1,16 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 @import "~animate.css/animate.min.css";
 @import "~hover.css/css/hover-min.css";
-html, body{
+ html, body{
   background: #ffd89b; /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #FFC66D, #53A0FD); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #FFC66D, #53A0FD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100%;
   overflow-x: hidden !important;
 }
+
+html, body{
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #232526, #414345); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #232526, #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  overflow-x: hidden !important;
+}
+
+
+
+html, body{
+  background: #B79891; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #B79891, #94716B); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #B79891, #94716B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  overflow-x: hidden !important;
+}
+
+
+html, body{
+  background-image: url('./assets/img-content/bg1.jpg');
+  height: 100%;
+  background-size: cover;
+  overflow-x: hidden !important;
+}
+html, body{
+  background: #536976; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #536976, #292E49); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #536976, #292E49); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  overflow-x: hidden !important;
+}
+
+
+
+
+
+
+
+
+
 
 .btnDry{
   background-color: #53A0FD;
@@ -71,13 +113,28 @@ transform: translateX(-50%);
   border: none !important;
 }
 
-.ngb-tp, .heure{
-  margin-left: 50% !important;
-  transform: translateX(-50%);
-}
+
 
 .heure fieldset{
   display: inline;
-  text-align: center;
-  width: 250px;
 }
+
+mat-tab-group{
+  width: 100% !important;
+}
+
+.mat-tab-label-content{
+  color:#ffffff;
+}
+
+.container-fluid{
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.row{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+

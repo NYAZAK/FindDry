@@ -1,63 +1,69 @@
-<div class="app-section p-0">
+<div class="app-section p-0" >
   <div class="creatCount float-right" style="width: 180px;">
     <!-- <span class="text-light">Bonjour <br> {{(AuthSS.user$ | async)?.email}}</span>   -->
-    <span *ngIf="AuthSS.user$ | async" (click)='deconnxion()'>
-      <a routerLink="/Accueil" >
-      <span class="infobulle" aria-label="se deconnecter">
-        <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+    <div *ngIf="AuthSS.user$ | async">
+      <span (click)='deconnxion()'>
+        <a routerLink="/Accueil">
+          <span class="infobulle" aria-label="se deconnecter">
+            <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+          </span>
+        </a>
       </span>
-      </a>
-    </span>
-    <span *ngIf="AuthSS.user$ | async">
-        <!-- (click)="seeMyProfil()" -->
-      <a routerLink="/ProfilUser"  >
-      <span class="infobulle" aria-label="Profil">
-        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+      <span (click)="seeMyProfil()">
+        <!--*ngIf="AuthSS.user$ | async"  -->
+        <!-- -->
+        <a routerLink="/ProfilUser">
+          <span class="infobulle" aria-label="Profil">
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+          </span>
+        </a>
       </span>
-      </a>
-    </span>
+    </div>
     <span *ngIf="!(AuthSS.user$ | async)">
       <a routerLink="/Connexion">
-      <span class="infobulle" aria-label="connectez-vous">
-        <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
-      </span>
+        <span class="infobulle" aria-label="connectez-vous">
+          <i class="fa fa-user-circle-o fa-2x " aria-hidden="true"></i>
+        </span>
       </a>
     </span>
     <span *ngIf="!(AuthSS.user$ | async)">
-      <a routerLink="/Create" >
-      <span class="infobulle mr-3" aria-label="creez votre compte">
-        <i class="fa fa-grav fa-2x" aria-hidden="true"></i>
-      </span>
+      <a routerLink="/Create">
+        <span class="infobulle mr-3" aria-label="creez votre compte">
+          <i class="fa fa-grav fa-2x" aria-hidden="true"></i>
+        </span>
       </a>
     </span>
   </div>
   <ul class=" menu_horizontal mt-5">
     <li>
-      <a routerLink="/Accueil"  class="text-light font-weight-bold">Accueil</a>
+      <a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a>
     </li>
     <li>
-      <a routerLink="/APropos"  class="text-light font-weight-bold">A propos </a>
+      <a routerLink="/APropos" class="text-light font-weight-bold">A propos </a>
     </li>
     <li>
-      <a routerLink="/Localiser"  class="text-light font-weight-bold">Localiser</a></li>
+      <a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a>
+    </li>
     <li>
-      <a routerLink="/Contact"  class="text-light font-weight-bold">Contacts</a>
+      <a routerLink="/Adminconnect" class="text-light font-weight-bold">Localiser</a>
     </li>
   </ul>
   <div class="menu-burger mt-5">
     <div class="btn-burger col-1" (click)="isDisappear()">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  <ul class='menu-hamburger mx-auto position-absolute d-flex flex-column col-12 ' *ngIf="!disappear">
-    <li class="col-12 mb-5 h1" (click)="isDisappear()" ><a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a></li>
-    <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/APropos" class="text-light font-weight-bold">A propos</a></li>
-    <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/Localiser" class="text-light font-weight-bold">Localiser</a></li>
-    <li class="col-12 mt-5 h1" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
-  </ul>
-</div>
+    <ul class='menu-hamburger mx-auto position-absolute d-flex flex-column col-12 ' *ngIf="!disappear">
+      <li class="col-12 mb-5 h1" (click)="isDisappear()"><a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a></li>
+      <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/APropos" class="text-light font-weight-bold">A
+          propos</a></li>
+      <li class="col-12 mt-5 h1" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
+      <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/Adminconnect" class="text-light font-weight-bold">Localiser</a></li>
+    </ul>
+  </div>
 </div>
 <div *ngIf="!disappear">
-<div class="overlay" (click)="isDisappear()"></div>
+  <div class="overlay" (click)="isDisappear()">
+  </div>
 </div>

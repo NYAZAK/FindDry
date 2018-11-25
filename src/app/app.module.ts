@@ -37,13 +37,12 @@ const routes: Routes = [
   { path: 'Contact', component: ContactComponent },
   { path: 'Create', component: CreateAccountComponent },
   { path: 'Connexion', component: ConnexionComponent },
-  { path: 'ChangeMesInfos', canActivate: [AuthGuardServiceService], component: UserFormComponent },
-  { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: UserProfilComponent }, // /:userid/:id
-  { path: 'Reservations', canActivate: [AuthGuardServiceService], component: ReservationsComponent },
-  { path: 'ReservationsForm', canActivate: [AuthGuardServiceService], component: ReservationFormComponent },
-  { path: 'Admin', canActivate: [AuthGuardServiceService], component: AdminConnexionComponent },
+  { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: ProfiluserComponent }, // /:userid/:id
+  { path: 'Adminconnect', component: AdminConnexionComponent },
+  { path: 'Adminview', canActivate: [AuthGuardServiceService], component: AdminviewComponent },
+  { path: 'Payment', canActivate: [AuthGuardServiceService], component: StripeComponent },
   { path: '', pathMatch: 'full', component: HeaderComponent },
-  { path: '**', redirectTo: 'ProfilUser' }
+  { path: '**', redirectTo: 'Accueil' }
 ];
 
 const CONFIG_FIREBASE: FirebaseAppConfig = {
