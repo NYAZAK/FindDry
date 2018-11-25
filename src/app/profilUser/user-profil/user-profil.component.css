@@ -1,0 +1,12 @@
+.ng-star-inserted{
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.alertbvn{
+    height: auto;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+    width: 80% !important;
+}

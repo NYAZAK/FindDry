@@ -1,43 +1,21 @@
 <div class="container">
-<div class=" row  mt-5 col-12 modifier text-light">
-  <div class="presentationProfil row col-12 text-center">
-      <h2 class=" col-8 mx-auto mt-5 text-center text-light font-weight-bold">
-          mes infos
-          {{(AuthSS.user$ | async)?.email }}
-      </h2>
+  <div class=" row  mt-5 modifier text-light text-center">
+    <div *ngFor="let info of profil$ | async" class="col-12">
+        <div class="card bg-info text-light mx-auto">
+            <div class="card-body">
+              <h5 class="card-title"> Bonjour
+                {{info.name}} {{info.firstname}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">voici vos informations personnelles :</h6>
+              <p class="card-text">vous etes né le {{info.dateboren}} <br> vous êtes au {{info.address}} - {{info.cp}}
+                -
+                {{info.city}}
+                <br>on peut vous joindre au {{info.phone}}
+              </p>
+            </div>
+          </div>
+          <ngb-alert *ngIf="!staticAlertClosed" type="success" (close)="staticAlertClosed = true"
+          class="position-absolute alertbvn mx-auto"
+          >Heureux de vous revoir {{info.name}} {{info.firstname}} !</ngb-alert>
+    </div>
   </div>
-  <div class="row mt-5 col-12">
-         <div class="card bg-dark col-12 p-5 col-lg-8 mx-auto" *ngFor="let info of profil$ | async">
-        <div class="row">  
-          <div class="form-group col-6">
-            <p>nom : {{info.name}}</p>   
-          </div>
-          <div class="form-group col-6">
-            <p>prenom : {{info.firstname}}</p> 
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-6">
-            <p>date de naissance : {{info.dateboren}}</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-6">
-            <p>adresse: {{info.address}}</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-6">
-            <p>code postal : {{info.cp}}</p>
-          </div>
-          <div class="form-group col-6">
-            <p>Ville : {{info.city}} </p>
-          </div>
-        </div>
-      </div>
-  </div>
-  <button class=" mx-auto btn btn-warning" (click)="onChangeProfil()" type="button">Modifier mes infos</button>
-  <button class=" mx-auto btn btn-success" (click)="mesPassages()">Mes passages</button>
-  <button class=" mx-auto btn btn-success" (click)="nouveauPassage()">Nouveau passage</button>
-</div>
 </div>
