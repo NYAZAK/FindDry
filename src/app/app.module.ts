@@ -33,9 +33,9 @@ import { ReservationFormComponent } from './reservation/reservation-form/reserva
 import { AdminConnexionComponent } from './admin/admin-connexion/admin-connexion.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminviewComponent } from './admin/adminview.component';
-import { ResponseComponent } from './response/response/response.component';
 import { ProfiluserComponent } from './profilUser/profiluser.component';
-import { StripeComponent } from './payment/stripe/stripe.component';
+import { PrixComponent } from './onepage/prix/prix.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   
@@ -45,10 +45,10 @@ const routes: Routes = [
   { path: 'Contact', component: ContactComponent },
   { path: 'Create', component: CreateAccountComponent },
   { path: 'Connexion', component: ConnexionComponent },
+  { path: 'Prix', component: PrixComponent },
   { path: 'ProfilUser', canActivate: [AuthGuardServiceService], component: ProfiluserComponent }, // /:userid/:id
   { path: 'Adminconnect', component: AdminConnexionComponent },
   { path: 'Adminview', canActivate: [AuthGuardServiceService], component: AdminviewComponent },
-  { path: 'Payment', canActivate: [AuthGuardServiceService], component: StripeComponent },
   { path: '', pathMatch: 'full', component: HeaderComponent },
   { path: '**', redirectTo: 'Accueil' }
 ];
@@ -79,9 +79,10 @@ const CONFIG_FIREBASE: FirebaseAppConfig = {
     AdminConnexionComponent,
     AdminDashboardComponent,
     AdminviewComponent,
-    ResponseComponent,
     ProfiluserComponent,
-    StripeComponent
+    PrixComponent,
+    FooterComponent,
+    // StripeComponent
   ],
   imports: [
     BrowserModule,
