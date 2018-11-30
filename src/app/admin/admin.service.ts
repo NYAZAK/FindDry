@@ -12,14 +12,15 @@ export class AdminService {
   user$ : Observable<firebase.User> = null;
   profils$;
   msgContacts;
+user;
   itemsRef: AngularFireList<any>;
   items: Observable<any[]>;
   constructor(private angularfa : AngularFireAuth, private afdb: AngularFireDatabase) { 
     this.user$ = angularfa.authState;
-    this.items = this.itemsRef.snapshotChanges().pipe(
-      map(changes => 
-        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      ) )
+    // this. profils$ = this.user.snapshotChanges().pipe(
+    //   map(changes => 
+    //     changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+    //   ) )
   }
 
   adLogin(email: string, password: string) {
@@ -31,10 +32,10 @@ export class AdminService {
   }
 
   getProfilsOfMyUsers() {
-      return this.profils$ = this.afdb.list(`UserProfil/`).valueChanges();
+    return   this.afdb.list(`UserProfil/`).valueChanges();
   }
 
   getAllMessagesContacts() {
-    return this.msgContacts = this.afdb.list('MessageContacts').valueChanges();
+    return this.afdb.list('MessageContacts').valueChanges();
   }
 }

@@ -1,0 +1,49 @@
+[{
+    "prestation": {
+        "lavagesVetements" : {
+            "kg1" : "moins d'un kg",
+            "prix1" : 3.44,
+            "kg3" : "moins de 3kg",
+            "prixkg3": 4.00,
+            "kg5": "moins de 5kg",
+            "prixkg5": 6.50,
+            "kg8": "moins de 8kg",
+            "prixkg8": 9.5,
+            "kg10": "moins de 10kg",
+            "prixkg10": 10.00,
+            "plus10": "Demander un devis par message",
+            "Pliage": "Pliage",
+            "Pliageprix": "forfait de 2",
+            "Repassage": "Repassage",
+            "RepassagePrix": "forfait de 10",
+            "Blachissage": "Blachissage",
+            "prixBlanchissage": "forfait de 10" 
+        },
+        "mariage" : {
+            "RobeMariage" : "Robe de Mariage",
+            "prixRobe" : 15.00,
+            "RCocktail" : "Robe Cocktail",
+            "pCocktail" : 14.00,
+            "Cravate":"Cravate",
+            "pCravate":2.00,
+            "Coat": "Manteau",
+            "pCoat": 10.00,
+            "Cardigan":"Cardigan",
+            "pCardigan": 10.00,
+            "Jacket":"Jacket",
+            "pJacket":15.00
+        },
+        "litiere": {
+            "House": "House",
+            "pHouse": 20.00,
+            "Edrodon": "Edrodon",
+            "pEdrodon": 10.00,
+            "Draps": "Draps",
+            "pDraps": 12.00,
+            "Oreille": "Oreillé",
+            "pOreille": 10.00,
+            "bled": "Blede",
+            "prixBled": 5
+        }
+    }
+}]
