@@ -1,25 +1,36 @@
 <div class="row app-section  col-12 text-dark mx-auto mt-5 pb-5">
-  <h2 class="text-center text-light col-12">Laissez nous un message</h2>
+  <h2 class="text-center col-12 titre_contact">Laissez nous un message</h2>
   <form class="col-12 p-5 col-lg-8 mx-auto " [formGroup]="formContact" (ngSubmit)="postMessage()" >
     <div class="form-row ">
       <div class="form-group col-md-6">
-        <label for="name" class="text-light font-weight-bold">Nom</label>
+        <label for="name" class="text-secondary font-weight-bold">Nom</label>
         <input type="text" class="form-control" id="name" placeholder="Nom" formControlName="name" required>
         <span *ngIf="formContact.invalid"></span>
       </div>
       <div class="form-group col-md-6">
-        <label for="prenom" class="text-light font-weight-bold">Prénom</label>
+        <label for="prenom" class="text-secondary font-weight-bold">Prénom</label>
         <input type="text" class="form-control" id="prenom" placeholder="Prénom" formControlName="lastname" required>
       </div>
     </div>
     <div class="form-group">
-      <label for="email"  class="text-light font-weight-bold" >Votre email</label>
+      <label for="email"  class="text-secondary font-weight-bold" >Votre email</label>
       <input type="email" name="email"  class="form-control" id="email" placeholder="email" formControlName="mail" email="true" required>
     </div>
     <div class="form-group">
-      <label for="message" class="text-light font-weight-bold">Message</label>
+      <label for="message" class="text-secondary font-weight-bold">Message</label>
       <textarea type="text" class="form-control" name="message" id="message" rows="3" placeholder="Message" formControlName="message" required></textarea>
     </div>
     <button class="btn btn-primary">Envoyez</button>
   </form>
+  <div *ngIf="msgDone" class="msgenvoyee col-12 mx-auto">
+    <p>
+      <ngb-alert  [dismissible]="true" (close)="dataExist = true"  type="warning">
+        <strong>Message Envoyé !</strong>
+        Merci d'avoir contacter FridDry, toute l'équipe s'éfforce de vous répondre dans les plus bref delais
+        A bientôt sur FindClean
+        <button class="btn btn-primary" routerLink="/Create"class="btn btn-primary" >Creer Son Compte</button>
+        <button class="btn btn-success" routerLink="/Connexion">Se Connecter</button>
+      </ngb-alert>
+    </p>
+  </div>
 </div>

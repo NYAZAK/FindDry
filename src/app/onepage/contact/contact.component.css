@@ -3,3 +3,12 @@
     height: auto !important;
     width: 100% !important;
 }
+
+.titre_contact{
+    font-family: 'League Script', cursive;
+    font-size: 35px;
+}
+
+label {
+    font-family: 'Catamaran', sans-serif;
+}

@@ -11,7 +11,7 @@ import { ContactService } from '../contact.service';
 export class ContactComponent implements OnInit {
   formContact: FormGroup;
   misTouched= 'Vous n\'avez pas rempli le champs';
-
+  msgDone: boolean = false;
   constructor(private fb: FormBuilder, public ContactS: ContactService) { }
 
   ngOnInit() {
@@ -33,6 +33,9 @@ export class ContactComponent implements OnInit {
         message: this.formContact.value.message
       });
     }
+    this.msgDone = true;
+    setTimeout(() => this.msgDone = false, 10000); 
+    this.formContact.reset();
   }
 
 }

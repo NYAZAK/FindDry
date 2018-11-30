@@ -1,0 +1,8 @@
+@media screen and (max-width: 600px) {
+  .sitemap, .cp{
+    text-align: center;
+    width: 100%;
+    margin: 0 !important;
+    float: left !important;
+  }
+};

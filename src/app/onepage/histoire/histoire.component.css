@@ -30,6 +30,7 @@ p{
     position: absolute;
     right: 30%;
     transition: 2s linear;
+    font-family: 'Catamaran', sans-serif;
 }
 .histoire:hover p {
     transform: translate(60px, -101%);
@@ -41,7 +42,10 @@ h5{
     left:10%;
     font-size: 40px;
     transition: 2s linear;
+    font-family: 'League Script', cursive;
+    font-size: 35px;
 }
 .histoire:hover h5{
     top: 0;
 }
+

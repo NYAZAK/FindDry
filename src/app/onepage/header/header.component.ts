@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent  {
 
-  title = 'Gagnez du temps en utilisant FindDry, commander un passage ; On vient, on prend votre linge, on le lave, le seche, opere des retouches, et on vous le rends 5 heures après*';
+  title = 'Gagnez en temps en utilisant FindClean, commander un passage ; On vient, on prend votre linge, on le lave, le seche, opere des retouches, et on vous le rends 5 heures après';
 
   imgMobile = '../assets/img-content/Mobile.png';
   imgLocalisation = '../assets/img-content/localisation-nglesson.png';
