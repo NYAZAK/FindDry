@@ -170,3 +170,12 @@ input{
 .textcolor{
   color:#232526 !important;
 }
+
+.fontCata{
+  font-family: 'Catamaran', sans-serif;
+}
+
+.titre{
+  color:#232526 !important;
+  font-family: 'League Script', cursive;
+}
