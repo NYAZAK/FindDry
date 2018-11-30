@@ -32,6 +32,7 @@ export class ReservationFormComponent implements OnInit {
   outsideDays = 'visible';
   handler: any;
   amount: number = 500;
+  resaprogramed: boolean = false;
   constructor(private fb: FormBuilder, private calendar: NgbCalendar, private route: Router, private angularfa: AngularFireAuth, private reserversationS: ReservationService, private payS: StripeService) {
     this.today = this.calendar.getToday();
     this.angularfa.authState.subscribe(user => {
@@ -116,22 +117,23 @@ export class ReservationFormComponent implements OnInit {
     this.reserversationS.createReseration(data, userid);
     // this.route.navigate(['/Payment']);
   }
-  // isToday(){
-  //   this.model = this.today;
-  // }
-  // onHour() {
-  //   this.time = {hour: (new Date()).getHours() + 2, minute:(new Date()).getMinutes()};
-  // }
+ 
   handlePayment() {
     this.handler.open({
-      name: 'FireStarter',
-      description: 'Deposit Funds to Account',
+      name: 'FindClean',
+      description: 'Payement d\'une course',
       amount: this.amount
+
     });
+    this.resaprogramed = true;
+    setTimeout( () => this.resaprogramed = false, 40000);
+   
   }
 
   @HostListener('window:popstate')
     onPopstate(){
-      this.handler.close()
+      this.handler.close();
+      this.resaprogramed = true;
+      setTimeout( () => this.resaprogramed = false, 40000);
     }
 }
