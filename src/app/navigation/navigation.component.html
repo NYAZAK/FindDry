@@ -1,4 +1,5 @@
 <div class="app-section p-0" >
+ 
   <div class="creatCount float-right" style="width: 180px;">
     <!-- <span class="text-light">Bonjour <br> {{(AuthSS.user$ | async)?.email}}</span>   -->
     <div *ngIf="AuthSS.user$ | async">
@@ -36,16 +37,16 @@
   </div>
   <ul class=" menu_horizontal mt-5">
     <li>
-      <a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a>
+      <a routerLink="/Accueil" class="textcolor">Accueil</a>
     </li>
     <li>
-      <a routerLink="/APropos" class="text-light font-weight-bold">A propos </a>
+      <a routerLink="/APropos" class="textcolor">A propos </a>
     </li>
     <li>
-      <a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a>
+      <a routerLink="/Prix" class="textcolor">Prix</a>
     </li>
     <li>
-      <a routerLink="/Adminconnect" class="text-light font-weight-bold">Localiser</a>
+      <a routerLink="/Contact" class="textcolor">Contacts</a>
     </li>
   </ul>
   <div class="menu-burger mt-5">
@@ -55,11 +56,10 @@
       <span></span>
     </div>
     <ul class='menu-hamburger mx-auto position-absolute d-flex flex-column col-12 ' *ngIf="!disappear">
-      <li class="col-12 mb-5 h1" (click)="isDisappear()"><a routerLink="/Accueil" class="text-light font-weight-bold">Accueil</a></li>
-      <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/APropos" class="text-light font-weight-bold">A
-          propos</a></li>
-      <li class="col-12 mt-5 h1" (click)="isDisappear()"><a routerLink="/Contact" class="text-light font-weight-bold">Contacts</a></li>
-      <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/Adminconnect" class="text-light font-weight-bold">Localiser</a></li>
+      <li class="col-12 mb-5 h1" (click)="isDisappear()"><a routerLink="/Accueil" class="text-light ">Accueil</a></li>
+      <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/APropos" class="text-light ">A propos</a></li>
+      <li class="col-12 mb-5 mt-5 h1" (click)="isDisappear()"><a routerLink="/Prix" class="text-light">Prix</a></li>
+      <li class="col-12 mt-5 h1" (click)="isDisappear()"><a routerLink="/Contact" class="text-light ">Contacts</a></li>
     </ul>
   </div>
 </div>

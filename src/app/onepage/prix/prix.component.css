@@ -1,0 +1,16 @@
+.pricing .pricing-title {
+    color: #57C1B3;
+    font-family: "Copernicus";
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+
+    h6, h3{
+        font-family: 'League Script', cursive;
+        font-size: 26px;
+      }
+
+      table{
+        font-family: 'Catamaran', sans-serif;
+      }

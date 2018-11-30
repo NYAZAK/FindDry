@@ -1,0 +1,115 @@
+<div class="container-fluid prix  mt-5 text-secondary">
+  <div class="mx-auto col-12 mt-5" *ngFor="let prix of prestation">
+    <div class="row mx-auto col-12">
+      <h3 class="pricing-title col-12 mt-5 text-center">Lavage Vetement</h3> 
+      <br>
+      <h6 class="col-12 pricing-title text-center mb-2"  style="line-height: 30px">coton, lin, et vetement en tout genre</h6>
+      <br>
+      <table class="table table-hover table-secondary mx-auto col-md-6 col-sm-8 col-xs-12">
+        <tbody>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.kg1}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.prix1 | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.kg3 }}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.prixkg3 | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.kg5}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.prixkg5 | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.kg8}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.prixkg8 | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.kg10}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.prixkg10 | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.Pliage}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.Pliageprix}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.Repassage}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.RepassagePrix}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.Blachissage}}</td>
+            <td class="text-right" class="text-right">{{prix.prestation.lavagesVetements.prixBlanchissage}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.lavagesVetements.plus10}}</td>
+            <td  class="text-right"><button class="btn btn-">Devis</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row col-12">
+      <h3 class="col-12 pricing-title text-center mt-5 mb-5" style="line-height: 30px">Lavage vetement professionel et mariage</h3>
+      <br>
+      <table class="table table-hover table-secondary mx-auto col-md-6 col-sm-8  col-xs-12">
+        <tbody>
+          <tr>
+            <td>{{prix.prestation.mariage.RobeMariage}}</td>
+            <td class="text-right">{{prix.prestation.mariage.prixRobe | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.mariage.RCocktail }}</td>
+            <td class="text-right">{{prix.prestation.mariage.pCocktail | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.mariage.Cravate}}</td>
+            <td class="text-right">{{prix.prestation.mariage.pCravate | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.mariage.Coat}}</td>
+            <td class="text-right">{{prix.prestation.mariage.pCoat | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.mariage.Cardigan}}</td>
+            <td class="text-right">{{prix.prestation.mariage.pCardigan | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.mariage.Jacket}}</td>
+            <td class="text-right">{{prix.prestation.mariage.pJacket | currency: 'EUR'}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class=" row col-12">
+      <h3 class=" col-12 pricing-title text-center mt-5 mb-5"  style="line-height: 30px">Lavage</h3>
+      <br>
+      <table class="table table-hover table-secondary  mx-auto col-md-6 col-sm-8  col-xs-12">
+        <tbody>
+          <tr>
+            <td>{{prix.prestation.litiere.House}}</td>
+            <td class="text-right">{{prix.prestation.litiere.pHouse | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.litiere.Edrodon}}</td>
+            <td class="text-right">{{prix.prestation.litiere.pEdrodon | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.litiere.Draps}}</td>
+            <td class="text-right">{{prix.prestation.litiere.pDraps | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.litiere.Oreille}}</td>
+            <td class="text-right">{{prix.prestation.litiere.pOreille | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.litiere.bled}}</td>
+            <td class="text-right">{{prix.prestation.litiere.prixBled | currency: 'EUR'}}</td>
+          </tr>
+          <tr>
+            <td>{{prix.prestation.mariage.Jacket}}</td>
+            <td class="text-right">{{prix.prestation.mariage.pJacket | currency: 'EUR'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,14 @@ a {
   text-transform: none;
 }
 
+ul > li > a{
+  font-family: 'League Script', cursive;
+  font-size: 26px;
+  
+}
+
+
+
 .creatCount{
   margin-top:45px;
 }
@@ -48,6 +56,8 @@ i:hover{
   background-color: #ffffff;
   padding:0 10px;
   border-radius:25px;
+  font-family: 'League Script', cursive;
+  font-size: 26px;
 }
 
 .menu_horizontal{

@@ -32,7 +32,7 @@ html, body{
 
 
 html, body{
-  background-image: url('./assets/img-content/bg1.jpg');
+  background-image: url('../src/assets/img-content/bg1.jpg');
   height: 100%;
   background-size: cover;
   overflow-x: hidden !important;
@@ -50,8 +50,29 @@ html, body{
 
 
 
+html, body{
+  
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #232526, #414345); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #232526, #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  overflow-x: hidden !important;
+}
 
-
+html, body{
+  background: #ADA996;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 100%;
+  overflow-x: hidden !important;
+}
+/* html, body{
+  background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+ background-blend-mode: normal,color-burn;
+ background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+ height: 100%;
+  overflow-x: hidden !important;
+} */
 
 
 .btnDry{
@@ -138,3 +159,14 @@ mat-tab-group{
   margin-right:0 !important;
 }
 
+app-footer{
+  margin-top:10%;
+}
+
+input{
+  border : none !important;
+}
+
+.textcolor{
+  color:#232526 !important;
+}

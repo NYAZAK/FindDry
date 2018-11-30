@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
-  title = 'Créez votre compte chez FindDry';
+  title = 'Créez votre compte chez FindClean';
   formCreate: FormGroup;
   constructor(private formBuilder: FormBuilder, private AuthSS: AuthServiceService, private route: Router) { }
 

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import * as firebase from 'firebase';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { keyframes } from '@angular/animations';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -15,37 +16,53 @@ export class AdminDashboardComponent implements OnInit {
   test;
   allMsgContacts;
   uid;
-
+  result;
+  keyuser;
+  theKey;
+  allusers;
+  key;
   constructor(private adS: AdminService, private afdb: AngularFireDatabase, private angularfa: AngularFireAuth) {
-    this.uid = this.angularfa.authState;
+    this.angularfa.authState.subscribe(user => {
+      if(user) this.test = user.uid; 
+    });
+ 
   }
 
   ngOnInit() {
-    var userId = firebase.auth().currentUser.uid;
-   this.allProfils$ = this.getprofil(); 
-   firebase.database()
-    .ref(`/UserProfil/${userId}`)
-    .once('value')
+    // this.allProfils$ =  this.getprofil(); 
+    this.keyuser = firebase.database().ref(`/UserProfil/`).once('value')
     .then(snapshot => {
-      console.log('snapshotval', snapshot.val());
-      const name = snapshot.val().name;
-      console.log(name, 'nom;');
-        snapshot.val();
-        // snapshot.val()['Test1 Lab'].Name
-     })
+      snapshot.forEach( (childSnapshot) => {
+        const key = childSnapshot.key;
+        const childData = childSnapshot.val();
+        console.log(key, 'key');
+       this.keyuser = this.afdb.list(`UserProfil/${key}`).valueChanges();
+      }
+   )});
+
+   
+    // console.log(this.allProfils$, 'all profil');
+  //  firebase.database().ref(`/UserProfil/`)
+  //   .once('value').then(snapshot => {
+  //    snapshot.val();
+  //      const res = Object.values(snapshot.val()).map(
+  //       (ob) => ob);
+  //     console.log(res, 'ici le res');
+  //    });
 
 }
-   
-  
 
+  getprof(address, index){
+
+  }
   
   getprofil() {
-   return this.adS.getAllMessagesContacts();
-   
+    return this.adS.getProfilsOfMyUsers(); 
   }
 
   getMsgContacts(){
     return this.adS.getAllMessagesContacts();
   }
  
+  
 }

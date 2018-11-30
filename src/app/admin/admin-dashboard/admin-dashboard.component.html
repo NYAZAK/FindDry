@@ -2,7 +2,9 @@
   <mat-tab label="Passages">
     <div class="container">
       <div class=" row  mt-5 modifier text-light text-center">
-        <div *ngFor="let profil of allProfils$ | async" class="col-12">
+        <div *ngFor="let profil of keyuser | async" class="col-12">
+          {{keyuser | json}}
+          <h2>Titre</h2>
           <div class="card bg-info text-light mx-auto">
             <div class="card-body">
               <h5 class="card-title"> Monsieur ou madame,
